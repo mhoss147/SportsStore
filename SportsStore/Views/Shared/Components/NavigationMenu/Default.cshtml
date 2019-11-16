@@ -1,21 +1,23 @@
 ﻿@model IEnumerable<String>
-
-@*creating home button*@ 
+@*creating home button*@
 <a class="btn btn-block btn-secondary"
    asp-action="List"
    asp-controller="Product"
    asp-route-category="category"
    asp-route-productPage="">
-   Home
+    Home
 </a>
 
 @foreach (string category in Model)
 {
-    <a class="btn btn-block btn-secondary"
+    @*highlighting the selected button*@
+    <a class="btn btn-block
+   @(category == ViewBag.SelectedCategory ? "btn-primary": "btn-secondary")"
+
        asp-action="List"
        asp-controller="Product"
        asp-route-category="@category"
-       asp-route-productPage="">
+       asp-route-productPage="1">
         @category
     </a>
 }

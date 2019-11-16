@@ -17,6 +17,8 @@ namespace SportsStore.Components
         }
         public IViewComponentResult Invoke()
         {
+
+            ViewBag.SelectedCategory = RouteData?.Values["category"];
             return View(repository.Products
             .Select(x => x.Category)
             // some product has same category but we weant distict
