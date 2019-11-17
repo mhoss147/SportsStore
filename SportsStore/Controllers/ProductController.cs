@@ -38,4 +38,3 @@ namespace SportsStore.Controllers
         });
     }
 }
-// defining cart model
