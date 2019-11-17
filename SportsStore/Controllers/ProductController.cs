@@ -31,12 +31,11 @@ namespace SportsStore.Controllers
          ItemsPerPage = PageSize,
              // page count correction
              TotalItems = category == null ?
-                repository.Products.Count() :
-                repository.Products.Where(e =>
-                e.Category == category).Count()
-
-         },
+                repository.Products.Count() : 
+             repository.Products.Where(e => e.Category == category).Count()
+            },
          CurrentCategory = category
         });
     }
 }
+// defining cart model
