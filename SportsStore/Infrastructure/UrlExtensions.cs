@@ -8,7 +8,7 @@ namespace SportsStore.Infrastructure
 {
     public static class UrlExtensions
     {
-        // this will bring back to previous page to continue shopping 
+        // this method will bring back to previous page to continue shopping 
         public static string PathAndQuery(this HttpRequest request) =>
             request.QueryString.HasValue
             // if has value
